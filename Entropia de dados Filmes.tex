@@ -1,0 +1,346 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{mathtools}
+\usepackage{parskip}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{caption}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.8,0,0.2}
+\definecolor{backcolour}{rgb}{.95,.95,1}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\title{Entropia de Dados}
+\author{Isabela Santos \hspace{0.1cm} Julia Molitzas \hspace{0.1cm} Júlia Rodriguez}
+\date{2023}
+
+
+\begin{document}
+\maketitle
+
+\newpage
+
+\section{Fórmula:}
+
+Para calcular a entropia:
+
+\[
+\ H = - \sum_{x  \hspace{0.1cm} \in  \hspace{0.1cm} Classes}P(x)\hspace{0.1cm} . \hspace{0.1cm} log_2 \hspace{0.1cm} (P(x))\]\newline
+
+\section{Aplicação dos Dados:}
+
+O conjunto de dados inclui os 1000 filmes que fizeram mais sucesso no período de 2006 a 2016.\newline
+
+As Classes são os gêneros dos filmes, que podem variar de "Sci-fi" a "Romance".\newline
+
+
+Classes = \{Action, Adventure, Animation, Biography, Comedy, Crime, Drama, Fantasy, Horror, Music, Mystery, Romance, Sci-fi, Sport, Thriller, War, Western\}\newline 
+
+Classe Action = 150 filmes \newline
+
+Classe Adventure = 26 filmes \newline
+
+Classe Animation = 49 filmes \newline
+
+Classe Biography = 56 filmes \newline
+
+Classe Comedy = 132 filmes \newline
+
+Classe Crime = 53 filmes \newline
+
+Classe Drama = 151 filmes \newline
+
+Classe Fantasy = 55 filmes \newline
+
+Classe Horror = 89 filmes \newline
+
+Classe Music = 8 filmes \newline
+
+Classe Mystery = 18 filmes \newline
+
+Classe Romance = 70 filmes \newline
+
+Classe  Sci-fi = 80 filmes \newline
+
+Classe Sport = 4 filmes \newline
+
+Classe Thriller = 52 filmes \newline
+
+Classe War = 5 filmes \newline
+
+Classe Western = 2 filmes \newline
+
+\section{Probabilidades:\newline}
+
+P(Classe Action) = $\frac{150}{1000}$ $\approx 0.150$ 
+
+P(Classe Adventure) = $\frac{26}{1000}$ $\approx 0.026$ 
+
+P(Classe Animation) = $\frac{49}{1000}$ $\approx 0.049$ 
+
+P(Classe Biography) = $\frac{56}{1000}$ $\approx 0.056$ 
+
+P(Classe Comedy) = $\frac{132}{1000}$ $\approx 0.132$ 
+
+P(Classe Crime) = $\frac{53}{1000}$ $\approx 0.053$ 
+
+P(Classe Drama) = $\frac{151}{1000}$ $\approx 0.151$ 
+
+P(Classe Fantasy) = $\frac{55}{1000}$ $\approx 0.055$ 
+
+P(Classe Horror) = $\frac{89}{1000}$ $\approx 0.089$  
+
+P(Classe Music) = $\frac{8}{1000}$ $\approx 0.008$ 
+
+P(Classe Mystery) = $\frac{18}{1000}$ $\approx 0.018$
+
+P(Classe Romance) = $\frac{70}{1000}$ $\approx 0.070$ 
+
+P(Classe  Sci-fi) = $\frac{80}{1000}$ $\approx 0.080$ 
+
+P(Classe Sport) = $\frac{4}{1000}$ $\approx 0.004$
+
+P(Classe Thriller) = $\frac{52}{1000}$ $\approx 0.052$
+
+P(Classe War) = $\frac{5}{1000}$ $\approx 0.005$
+
+P(Classe Western) = $\frac{2}{1000}$ $\approx 0.002$
+
+\section{Aplicação da Fórmula:\newline}
+
+\begin{align*}
+    \ H = - \sum_{x  \hspace{0.1cm} \in  \hspace{0.1cm} \{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17\}} P(x)\hspace{0.1cm} . \hspace{0.1cm} log_2 \hspace{0.1cm} (P(x))\newline
+\end{align*}
+
+\begin{align*}
+    \begin{split}
+        H &= - (0.150 \cdot \log_2 0.150) + (0.026 \cdot \log_2 0.026) + (0.049 \cdot \log_2 0.049) + (0.056 \cdot \log_2 0.056) \\
+        &\quad + (0.132 \cdot \log_2 0.132) + (0.053 \cdot \log_2 0.053) + (0.151 \cdot \log_2 0.151) + (0.055 \cdot \log_2 0.055) \\
+        &\quad + (0.089 \cdot \log_2 0.089) + (0.008 \cdot \log_2 0.008) + (0.018 \cdot \log_2 0.018) + (0.070 \cdot \log_2 0.070) \\
+        &\quad + (0.080 \cdot \log_2 0.080) + (0.004 \cdot \log_2 0.004) + (0.052 \cdot \log_2 0.052) + (0.005 \cdot \log_2 0.005) \\
+        &\quad + (0.002 \cdot \log_2 0.002)
+    \end{split}
+\end{align*}
+
+
+\begin{align*}
+\log_2 \, 0.150 &= \frac{\log 0.150}{0.3} \approx -2.74 & \log_2 \, 0.089 &= \frac{\log 0.089}{0.3} \approx -3.5 \\
+\log_2 \, 0.026 &= \frac{\log 0.026}{0.3} \approx -5.2 & \log_2 \, 0.008 &= \frac{\log 0.008}{0.3} \approx -6.98 \\
+\log_2 \, 0.049 &= \frac{\log 0.049}{0.3} \approx -4.36 & \log_2 \, 0.018 &= \frac{\log 0.018}{0.3} \approx -5.81 \\
+\log_2 \, 0.056 &= \frac{\log 0.056}{0.3} \approx -4.17 & \log_2 \, 0.070 &= \frac{\log 0.070}{0.3} \approx -3.84 \\
+\log_2 \, 0.132 &= \frac{\log 0.132}{0.3} \approx -2.93 & \log_2 \, 0.080 &= \frac{\log 0.080}{0.3} \approx -3.65 \\
+\log_2 \, 0.053 &= \frac{\log 0.053}{0.3} \approx -4.25 & \log_2 \, 0.004 &= \frac{\log 0.004}{0.3} \approx -7.99 \\
+\log_2 \, 0.151 &= \frac{\log 0.151}{0.3} \approx -2.73 & \log_2 \, 0.052 &= \frac{\log 0.052}{0.3} \approx -4.27 \\
+\log_2 \, 0.055 &= \frac{\log 0.055}{0.3} \approx -4.49 & \log_2 \, 0.005 &= \frac{\log 0.005}{0.3} \approx -7.67 \\
+\log_2 \, 0.002 &= \frac{\log 0.002}{0.3} \approx -8.99 \\
+\end{align*}
+
+
+\begin{align*}
+    H &= - (0.150 \cdot (-2.74) + 0.026 \cdot (-5.2) + 0.049 \cdot (-4.36) + 0.056 \cdot (-4.17) \\
+    &\quad + 0.132 \cdot (-2.93) + 0.053 \cdot (-4.25) + 0.151 \cdot (-2.73) + 0.055 \cdot (-4.49) \\
+    &\quad + 0.002 \cdot (-8.99) + 0.089 \cdot (-3.5) + 0.008 \cdot (-6.98) + 0.018 \cdot (-5.81) \\
+    &\quad + 0.070 \cdot (-3.84) + 0.080 \cdot (-3.65) + 0.004 \cdot (-7.99) + 0.052 \cdot (-4.27) \\
+    &\quad + 0.005 \cdot (-7.67))
+\end{align*}
+
+$H = -(- 3.5911)$ \newline
+$H \approx 3.59$\newline
+
+\section{Cálculo da entropia máxima:}
+
+\begin{align*}
+    Hmax &= \log_2 17 \\
+    Hmax &= \frac{1.23}{0.3} \\
+    Hmax &= 4.1 \\
+\end{align*}
+
+\section{Conclusão:}
+Os dados apresentados tem o valor da entropia próximo ao valor da entropia máxima, assim possuindo um alto grau de aleatoriedade, ou seja, os dados se distanciam da distribuição uniforme.\newline
+
+\section{Programação Python:}
+\subsection{Código:}
+
+\begin{lstlisting}[language=Python]
+#importacao do bando de dados
+import pandas as pd
+
+#ler o arquivo do Excel
+dados_excel = pd.read_excel(r"C:\Users\Fatec\Downloads\filmes-dataset.xlsx")
+
+
+print("Filmes:")
+
+#acessando a coluna especifica dos generos pelo numero do indice
+g = 0
+while g < 17:
+    nome_coluna = dados_excel.iloc[:, g]
+    g += 1
+    for valor in nome_coluna:
+        if not pd.isna(valor): 
+            print(valor) 
+    print()
+    
+    
+print("Tamanho das Colunas de Generos:")
+    
+for coluna in dados_excel.columns:
+    if dados_excel[coluna].count() > 0:
+        print("Coluna:", coluna)
+        print("Tamanho:", dados_excel[coluna].count())
+        print()
+
+#calculo das probabilidades
+total_elementos = 0
+for coluna in dados_excel.columns:
+    if dados_excel[coluna].count() > 0: 
+        total_elementos += dados_excel[coluna].count() 
+print("Valor total: ", total_elementos) 
+print()
+
+probabilidades = []
+for coluna in dados_excel.columns:
+    if dados_excel[coluna].count() > 0:
+        p = dados_excel[coluna].count() / total_elementos
+        probabilidades.append(p)
+        print(f"Probabilidades: {p:.3f}") 
+print()
+
+
+#calculo da entropia
+
+import math
+
+def calcular_entropia(probabilidades):
+    entropia = 0
+    for p in probabilidades:
+        entropia += p * math.log2(p)
+    entropia = -entropia
+    return entropia
+
+entropia_resultante = calcular_entropia(probabilidades)
+print(f"Entropia: {entropia_resultante:.2f}")
+
+#entropia maxima
+
+entropia_max = math.log2(17)
+print(f"Entropia maxima: {entropia_max:.2f} ")
+
+\end{lstlisting}
+
+\newpage
+
+\subsection{Resultado no Console:\newline }
+
+Exemplo de como são impressos os filmes (filmes de Thriller, War, Western):
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=1.2\textwidth]{Exemplo Filmes Console.png}
+  \label{fig:imagem}
+\end{figure}
+
+Continuação do Console após impressão dos filmes:
+
+\begin{verbatim}
+
+Tamanho das Colunas de Gêneros:
+Coluna: ACTION
+Tamanho: 150
+
+Coluna: ADVENTURE
+Tamanho: 26
+
+Coluna: ANIMATION
+Tamanho: 49
+
+Coluna: BIOGRAPHY 
+Tamanho: 56
+
+Coluna: COMEDY
+Tamanho: 132
+
+Coluna: CRIME
+Tamanho: 53
+
+Coluna: DRAMA 
+Tamanho: 151
+
+Coluna: FANTASY 
+Tamanho: 55
+
+Coluna: HORROR 
+Tamanho: 89
+
+Coluna: MUSIC
+Tamanho: 8
+
+Coluna: MYSTERY 
+Tamanho: 18
+
+Coluna: ROMANCE 
+Tamanho: 70
+
+Coluna: SCI-FI
+Tamanho: 80
+
+Coluna: SPORT 
+Tamanho: 4
+
+Coluna: THRILLER 
+Tamanho: 52
+
+Coluna: WAR
+Tamanho: 5
+
+Coluna: WESTERN
+Tamanho: 2
+
+Valor total:  1000
+
+Probabilidades: 0.150
+Probabilidades: 0.026
+Probabilidades: 0.049
+Probabilidades: 0.056
+Probabilidades: 0.132
+Probabilidades: 0.053
+Probabilidades: 0.151
+Probabilidades: 0.055
+Probabilidades: 0.089
+Probabilidades: 0.008
+Probabilidades: 0.018
+Probabilidades: 0.070
+Probabilidades: 0.080
+Probabilidades: 0.004
+Probabilidades: 0.052
+Probabilidades: 0.005
+Probabilidades: 0.002
+
+Entropia: 3.59
+Entropia máxima: 4.09 
+
+\end{verbatim}
+
+
+\end{document}
